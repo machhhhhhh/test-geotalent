@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result2</title>
+    <style>
+        #result{
+            border: 1px solid black;
+            width: 10%;
+            display: inline-block;
+            padding: 4;
+            height: 20px;
+            
+        }
+    </style>
+
+    <script type="text/javascript">
+
+        function calculate(){
+
+            let x = document.querySelector("#input1").value
+            let y = document.querySelector("#input2").value
+            
+
+            if(isNaN(x) || isNaN(y)) return alert('Cannot Calculate')
+
+            const result = (x*x) + (y*y*y)
+            console.log(result);
+            
+            document.getElementById("result").innerHTML = result
+            document.querySelector("#input1").value = "";
+            document.querySelector("#input2").value = "";
+        }
+
+        
+
+    </script>
+</head>
+<body>
+
+    <form>
+        <div>
+            <label for="input1">Input X =</label>
+            <input  id="input1" ></input>
+        </div>
+        <div>
+            <label for="input2">Input Y =</label>
+            <input  id="input2" ></input>
+        </div>
+        <div>
+            <label>X² + Y² = </label>
+            <p id="result"></p>
+            <button type="button" onclick="calculate()">Calculate</button>
+        </div>
+    </form>
+    
+</body>
+</html>

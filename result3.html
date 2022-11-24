@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Result3</title>
+    <script>
+        function byte(){
+            let bytes = +document.querySelector('#input').value
+            if      (bytes >= 1073741824) { bytes = (bytes / 1073741824).toFixed(2) + " GB"; }
+            else if (bytes >= 1048576)    { bytes = (bytes / 1048576).toFixed(2) + " MB"; }
+            else if (bytes >= 1024)       { bytes = (bytes / 1024).toFixed(2) + " KB"; }
+            else if (bytes > 1)           { bytes = bytes + " bytes"; }
+            else if (bytes == 1)          { bytes = bytes + " byte"; }
+            else                          { bytes = "0 bytes"; }
+
+            document.getElementById("result").innerHTML = bytes
+
+            }
+        function roman(){
+
+        }
+    </script>
+</head>
+<body>
+    <input id="input">
+    <div>
+        <button type="button" onclick="byte()">คำนวน Byte เป็น KB, MB, GB</button>
+    </div>
+    <div>
+        <button type="button" onclick="roman()">แปลงเป็นเลขโรมัน</button>
+    </div>
+
+    <h1>Output : <p id="result"></p></h1>
+</body>
+</html>
